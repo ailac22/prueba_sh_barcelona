@@ -50,6 +50,8 @@ chmod -R o+w ./web/assets
 chmod -R o+w ./tmp
 ```
 
+caldrà canviar permissos d'altres fitxers creats durant el procés. 
+
 ### MySQL
 
 Hem de afegir un segon servei al docker-compose per allotjar la base de dades MySQL. La plantilla avençada fa aixo de manera similar a aquesta:
@@ -65,6 +67,7 @@ Hem de afegir un segon servei al docker-compose per allotjar la base de dades My
 ```
 
 I canviem la configuració al fitxer config/db.php
+
 ```yaml
     'class' => 'yii\db\Connection',
     'dsn' => 'mysql:host=mysql;dbname=yii2basic',
@@ -74,5 +77,21 @@ I canviem la configuració al fitxer config/db.php
 ```
 Ara haurem de crear una primera migració per crear la taula de usuaris i un usuari amb el que poder fer login. Dins el contenidor php:
 
-> 
+> php yii message/create create_user_table
+
+A la migració crearem una taula amb els camps id,username,passwordHash i authKey. En concret: 
+
+``` 
+      'passwordHash' => '$2y$13$Kggcn1Iq1JWw5gFjbJuv.OoO22yaXiquSjQZy75fr6e/PTwsLSuBG',
+      'authKey' => 'QbIzc4KVqQdPZkU4-rFK18Hct32lmVt'
+```
+
+el passwordHash l'hem obtingut fent el hash de la contrasenya "123456" mitjançant la funció Yii::$app->security->generatePasswordHash($password);
+
+l'authKey es una string aleatòria obtinguda amb Yii::$app->security->generateRandomString()
+
+> php yii migrate
+
+### Usuari
+
 
