@@ -135,4 +135,15 @@ S'han inclòs algunes imatges a la carpeta `imatges`
 
 ## Instal·lació
 
+Després de clonar el repositori (o descomprimir el codi), farém al directori amb el codi (codi_prova):
+
+> `# docker-compose run --rm php composer update --prefer-dist`
+
+> `docker-compose run --rm php composer install`
+
+> `chmod -R o+w .`
+
+> `docker-compose run --rm php php yii migrate`
+
+i escriurem 'yes' a la pregunta.
 
