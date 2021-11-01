@@ -114,7 +114,7 @@ Fem la clase usuari un ActiveRecord i fem que vagi a cercar a la base de dades c
 
 Ara volem afegir una ruta protegida, de forma que només quan estem loguejats sigui visible, i si intentem accedir sense estar loguejats, obtindrem un error HTTP 401 unauthorized.
 
-Es crea una nova acció anomenada `actionRutaprotegida`, que només es mostra la vista si hi ha un usuari loguejat 
+Es crea una nova acció anomenada `actionRutaprotegida`, a on només es mostra la vista si hi ha un usuari loguejat 
 
 ```php
 
