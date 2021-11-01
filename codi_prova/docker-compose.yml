@@ -17,3 +17,5 @@ services:
       - MYSQL_DATABASE=yii2basic
       - MYSQL_USER=yii2basic
       - MYSQL_PASSWORD=secret
+    volumes:
+      - ./db/data:/var/lib/mysql
