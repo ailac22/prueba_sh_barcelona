@@ -94,4 +94,18 @@ l'authKey es una string aleatòria obtinguda amb Yii::$app->security->generateRa
 
 ### Usuari
 
+Aqui hem de canviar la clase User, de forma similar a la que es fa en:
+
+- [La documentació de yii2](https://www.yiiframework.com/doc/guide/2.0/en/security-authentication)
+- La template avançada
+
+Fem la clase usuari un ActiveRecord i fem que vagi a cercar a la base de dades configurades les dades d'usuari amb els mètodes que ens ofereix. Una vegada fet aixo, la funcionalitat del template hauria de funcionar amb l'usuari:
+
+nom: sh_barcelona
+pass: 123456
+
+### Controlador y vistes
+
+Ara volem afegir una ruta protegida, de forma que només quan estem loguejats sigui visible, i si intentem accedir sense estar loguejats, obtindrem un error HTTP 401 unauthorized.
+
 
