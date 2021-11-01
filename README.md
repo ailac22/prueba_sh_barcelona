@@ -139,11 +139,11 @@ Després de clonar el repositori (o descomprimir el codi), farém al directori a
 
 > `# docker-compose run --rm php composer update --prefer-dist`
 
-> `docker-compose run --rm php composer install`
+> `# docker-compose run --rm php composer install`
 
-> `chmod -R o+w .`
+> `# chmod -R o+w .`
 
-> `docker-compose run --rm php php yii migrate`
+> `# docker-compose run --rm php php yii migrate`
 
 i escriurem 'yes' a la pregunta.
 
